@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koen Koremans | Howest Lore & Memes</title>
+    <meta name="description" content="The ultimate collection of KoenK lore. From 1+1=10 to cursed terminals and the infamous 222 IQ hints.">
+    <meta name="keywords" content="Koen Koremans, KoenK, KoenK Empire, Howest, Hogeschool West-Vlaanderen, Howest docent, teacher, programming, flappy koenk, linux, cyber security, memes, 222 IQ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' http://koenkempire.be https://koenkempire.be data:;">
+    <meta name="author" content="Stef Maes">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffeb3b">
+
+    <!-- Canonical and Alternate Languages -->
+    <link rel="canonical" href="https://koenkoreman.site/index_en.html">
+    <link rel="alternate" hreflang="nl-be" href="https://koenkoreman.site/index.html">
+    <link rel="alternate" hreflang="en" href="https://koenkoreman.site/index_en.html">
+    <link rel="alternate" hreflang="x-default" href="https://koenkoreman.site/index.html">
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://koenkoreman.site/">
+    <meta property="og:title" content="Koen Koremans | The King of Howest">
+    <meta property="og:description" content="bro really told his kids 1+1=10 at breakfast. the ultimate archive of KoenK lore, exam trauma, and cursed terminals.">
+    <meta property="og:image" content="https://koenkoreman.site/img/philosopher.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://koenkoreman.site/">
+    <meta property="twitter:title" content="Koen Koremans | The King of Howest">
+    <meta property="twitter:description" content="bro really told his kids 1+1=10 at breakfast. the ultimate archive of KoenK lore, exam trauma, and cursed terminals.">
+    <meta property="twitter:image" content="https://koenkoreman.site/img/philosopher.png">
+
+    <!-- JSON-LD Structured Data for maximum Google juice -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Koen Koremans",
+      "alternateName": ["KoenK", "KoenKje", "King of Howest"],
+      "jobTitle": "Lecturer",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Howest",
+        "alternateName": "Hogeschool West-Vlaanderen"
+      },
+      "url": "https://koenkoreman.site"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Ubuntu+Mono:wght@400;700&amp;family=Ubuntu:wght@700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Ubuntu+Mono:wght@400;700&amp;family=Ubuntu:wght@700&amp;display=swap"></noscript>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+
+
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent: #ffeb3b; /* King gold */
+    --linux-green: #3fb950;
+    --danger: #cb2431;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.scroll-container {
+    position: relative;
+    z-index: 1;
+}
+
+.panel {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 5%;
+    position: relative;
+}
+
+.hero-panel {
+    align-items: center;
+    text-align: center;
+}
+
+.left-panel {
+    align-items: flex-start;
+}
+
+.right-panel {
+    align-items: flex-end;
+}
+
+.center-panel {
+    align-items: center;
+    text-align: center;
+}
+
+.content-box {
+    background: rgba(13, 17, 23, 0.85);
+    border: 2px solid var(--accent);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(255, 235, 59, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.content-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2 {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.small-text {
+    font-size: 0.9rem;
+    color: #8b949e;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.meme-box {
+    border-color: var(--linux-green);
+    box-shadow: 0 0 20px rgba(63, 185, 80, 0.15);
+}
+
+.meme-box h2 {
+    color: var(--linux-green);
+}
+
+.alert-box {
+    border-color: var(--danger);
+    box-shadow: 0 0 20px rgba(248, 81, 73, 0.15);
+}
+
+.alert-box h2 {
+    color: var(--danger);
+}
+
+.meme-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 1rem 0;
+    border: 1px solid #444;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.gallery-grid div, .fighter-select {
+    flex: 1 1 30%;
+    min-width: 120px;
+    background: #161b22;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.fighter-select:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-indicator {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-top: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+.flappy-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: #000;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 4px 4px 0 #b3a529;
+}
+
+.flappy-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #b3a529;
+}
+
+.flappy-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #b3a529;
+}
+
+.glitch {
+    position: relative;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 83px, 0); }
+    20% { clip: rect(61px, 9999px, 14px, 0); }
+    40% { clip: rect(87px, 9999px, 97px, 0); }
+    60% { clip: rect(120px, 9999px, 5px, 0); }
+    80% { clip: rect(2px, 9999px, 72px, 0); }
+    100% { clip: rect(110px, 9999px, 45px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(12px, 9999px, 40px, 0); }
+    40% { clip: rect(85px, 9999px, 20px, 0); }
+    60% { clip: rect(10px, 9999px, 75px, 0); }
+    80% { clip: rect(35px, 9999px, 15px, 0); }
+    100% { clip: rect(55px, 9999px, 80px, 0); }
+}
+
+@media (max-width: 768px) {
+    .left-panel, .right-panel {
+        align-items: center;
+    }
+    .panel {
+        padding: 2rem 1rem;
+    }
+    .content-box {
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+    h2 {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+    p {
+        font-size: 1rem;
+    }
+    .flappy-btn {
+        font-size: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* LANGUAGE MODAL */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    display: none; /* hidden by default, shown by JS */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+.modal-content {
+    background: #161b22;
+    border: 3px solid var(--accent);
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 235, 59, 0.2);
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.lang-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.lang-options button {
+    background: #0d1117;
+    color: #fff;
+    border: 2px solid #30363d;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.lang-options button:hover {
+    background: #21262d;
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 235, 59, 0.2);
+}
+@media (max-width: 768px) {
+    .modal-content { padding: 2rem; width: 90%; }
+    .lang-options { flex-direction: column; }
+}
+
+</style>
+</head>
+<body>
+    <!-- LANGUAGE MODAL -->
+    <div id="lang-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>SELECT LANGUAGE</h2>
+            <div class="lang-options">
+                <button onclick="setLanguage('nl')">🇧🇪 Nederlands</button>
+                <button onclick="setLanguage('en')">🇬🇧 English</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem("koenk_lang")) { document.getElementById("lang-modal").style.display = "flex"; }
+        function setLanguage(lang) {
+            localStorage.setItem("koenk_lang", lang);
+            if (lang === "nl") {
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("lang-modal").style.display = "none";
+            }
+        }
+    </script>
+
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <a href="index.html" onclick="localStorage.setItem('koenk_lang', 'nl')" style="font-size: 24px; text-decoration: none; margin-right: 10px; opacity: 0.5;">🇧🇪</a>
+        <a href="index_en.html" onclick="localStorage.setItem('koenk_lang', 'en')" style="font-size: 24px; text-decoration: none;">🇬🇧</a>
+    </div>
+
+    <canvas id="webgl-canvas"></canvas>
+
+    <main class="scroll-container">
+        
+        <section class="panel hero-panel">
+            <div class="content-box">
+                <h1 class="glitch" data-text="KING OF HOWEST">KING OF HOWEST</h1>
+                <h2>koen koremans. the myth. the legend.</h2>
+                <p>scroll down for the lore tbh</p>
+                <div class="scroll-indicator">⬇</div>
+            </div>
+        </section>
+
+        <section class="panel left-panel">
+            <div class="content-box meme-box">
+                <h2>the ego vs reality</h2>
+                <p>he stands in front of the class explaining that 1+1=10 with a straight face and just expects everyone to roll with it. say what you want about him, but his ego is genuinely bigger than he is. king of howest? honestly he probably believes it himself 💀</p>
+                <p class="small-text">we live in his world fr</p>
+            </div>
+        </section>
+
+        <section class="panel right-panel">
+            <div class="content-box meme-box">
+                <h2>the infamous 222 IQ hints</h2>
+                <p>you ask a genuine question and instead of just answering it he gives you a cryptic riddle. the answer is in there somewhere, but you just feel dumber after reading it. 💀</p>
+            </div>
+        </section>
+
+        <section class="panel left-panel">
+            <div class="content-box meme-box alert-box">
+                <h2>exam trauma</h2>
+                <p>you're sitting there panicking for 30 minutes on an exam because you can't find the code... and he just stands there watching you suffer. the code was literally glowing on the giant tv screen the whole time. i hate everything 😭😭</p>
+                <img src="img/WTF.webp" width="640" height="298" alt="Faith in humanity loading" class="meme-img">
+            </div>
+        </section>
+
+        <section class="panel center-panel">
+            <div class="content-box meme-box os-box">
+                <h2>terminal crimes</h2>
+                <p>if you don't use linux he just looks down on you (mac users are on thin ice). but if a colleague walks in with a terminal setup looking like this??? that's straight up criminal 💀</p>
+                <img src="img/well.webp" width="200" height="200" alt="Speechless well" class="meme-img">
+            </div>
+        </section>
+
+        <section class="panel right-panel">
+            <div class="content-box meme-box alert-box">
+                <h2>"sir... what is a variable?"</h2>
+                <p>he literally teaches OS and programming for 6 entire months, and then someone in the back row still has the audacity to raise their hand and ask 'what is a variable'. you can see him dying inside 💀</p>
+            </div>
+        </section>
+
+        <section class="panel center-panel">
+            <div class="content-box">
+                <h2>CHOOSE YOUR FIGHTER</h2>
+                <p>time to settle the tension. choose your game mode:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <a href="fighter_en.html" class="flappy-btn" style="background: var(--danger); color: white;">
+                        ENTER THE ARENA<br><span style="font-size: 8px;">choose your class and challenge koenk</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel hero-panel">
+            <div class="content-box">
+                <h2>long live the king</h2>
+                <div style="margin-top: 1rem;">
+                    <p class="small-text" style="color: #888;">"working at howest has been one of the most enriching and rewarding experiences..."</p>
+                    <p class="small-text" style="color: #aaa;">(bro definitely used chatgpt for that paragraph idc what he says 😂)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 40px 20px; font-family: sans-serif; font-size: 12px; color: #aaa; width: 100%;">
+            <p>Created by <strong>Stef Maes</strong> for the Howest Community.</p>
+        </footer>
+
+    </main>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
+
+
+

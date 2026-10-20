@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoenK Boss Fight - The Empire</title>
+    <meta name="author" content="Stef Maes">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' http://koenkempire.be https://koenkempire.be data:;">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="fighter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="arena">
+        
+        <!-- CHARACTER SELECTION SCREEN -->
+        <div id="selection-screen">
+            <h1>CHOOSE YOUR FIGHTER</h1>
+            <p>Who dares challenge the realm of KoenK?</p>
+            <div class="character-grid">
+                <div class="character-card" onclick="startGame('macos')">
+                    <div class="char-icon">🍎💻</div>
+                    <h2>macOS User</h2>
+                    <p class="char-desc">Your terminal is cursed and you rely on overpriced dongles.</p>
+                </div>
+                <div class="character-card" onclick="startGame('late')">
+                    <div class="char-icon">🎒🏃‍♂️</div>
+                    <h2>Late Student</h2>
+                    <p class="char-desc">The train was late again and you just want to sneak in unnoticed.</p>
+                </div>
+                <div class="character-card" onclick="startGame('ai')">
+                    <div class="char-icon">🤖⌨️</div>
+                    <h2>ChatGPT Addict</h2>
+                    <p class="char-desc">You don't know what a variable is, but the code works (allegedly).</p>
+                </div>
+            </div>
+            <a href="index_en.html" class="back-btn" style="margin-top: 30px;">Flee back to Howest</a>
+        </div>
+
+        <div style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
+            <a href="fighter.html" style="font-size: 20px; text-decoration: none; opacity: 0.5;">🇧🇪</a>
+            <a href="fighter_en.html" style="font-size: 20px; text-decoration: none;">🇬🇧</a>
+        </div>
+        
+        <!-- BATTLE ARENA -->
+        <div id="battle-screen" style="display: none; width: 100%; height: 100%; flex-direction: column;">
+            <header class="ui-header">
+                <div class="health-container">
+                    <div class="name-tag" id="player-name">PLAYER</div>
+                    <div class="health-bar"><div class="health-fill" id="player-health"></div></div>
+                    <div class="hp-text" id="player-hp-text">100/100</div>
+                </div>
+                
+                <div class="vs">VS</div>
+                
+                <div class="health-container right">
+                    <div class="name-tag" id="koenk-name-tag">KOENK</div>
+                    <div class="health-bar"><div class="health-fill" id="koenk-health"></div></div>
+                    <div class="hp-text" id="koenk-hp-text">100/100</div>
+                </div>
+            </header>
+
+            <div class="battlefield">
+                <div class="fighter" id="player-sprite">
+                    <img id="player-icon" src="" alt="Player">
+                </div>
+                <div class="fighter" id="koenk-sprite">
+                    <img src="img/philosopher.png" alt="KoenK">
+                </div>
+            </div>
+
+            <div class="ui-bottom">
+                <div class="message-box" id="message-box">
+                    A wild KoenK appears! What will you do?
+                </div>
+                <div class="action-menu" id="action-menu">
+                    <!-- Buttons are injected via JS -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-over" id="game-over">
+            <h1 id="end-title">DEFEATED</h1>
+            <p id="end-desc">You are officially banned from the KoenK Empire.</p>
+            <a href="index_en.html" class="back-btn">Return to class</a>
+            <button class="back-btn" onclick="location.reload()" style="margin-left: 10px;">Try again</button>
+        </div>
+    </div>
+
+    <script src="fighter_en.js"></script>
+</body>
+</html>

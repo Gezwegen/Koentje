@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' http://koenkempire.be https://koenkempire.be data:;">
+    
+    <!-- GOATED SEO META TAGS -->
+    <title>Koen Koremans | The King of Howest & KoenK Empire Lore</title>
+    <meta name="description" content="De ultieme verzameling KoenK lore. Van 1+1=10 tot terminal misdaden en de beruchte 222 IQ hints.">
+    <meta name="keywords" content="Koen Koremans, KoenK, KoenK Empire, Howest, Hogeschool West-Vlaanderen, Howest docent, teacher, programming, flappy koenk, linux, cyber security, memes, 222 IQ">
+    <meta name="author" content="Stef Maes">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffeb3b">
+
+    <!-- Canonical and Alternate Languages -->
+    <link rel="canonical" href="https://koenk-lore-howest.be/index.html">
+    <link rel="alternate" hreflang="nl-be" href="https://koenk-lore-howest.be/index.html">
+    <link rel="alternate" hreflang="en" href="https://koenk-lore-howest.be/index_en.html">
+    <link rel="alternate" hreflang="x-default" href="https://koenk-lore-howest.be/index.html">
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://koenk-lore-howest.be/">
+    <meta property="og:title" content="Koen Koremans | The King of Howest">
+    <meta property="og:description" content="bro really told his kids 1+1=10 at breakfast. the ultimate archive of KoenK lore, exam trauma, and cursed terminals.">
+    <meta property="og:image" content="https://koenkempire.be/assets/img/articles/philosopher.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://koenk-lore-howest.be/">
+    <meta property="twitter:title" content="Koen Koremans | The King of Howest">
+    <meta property="twitter:description" content="bro really told his kids 1+1=10 at breakfast. the ultimate archive of KoenK lore, exam trauma, and cursed terminals.">
+    <meta property="twitter:image" content="https://koenkempire.be/assets/img/articles/philosopher.png">
+
+    <!-- JSON-LD Structured Data for maximum Google juice -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Koen Koremans",
+      "alternateName": ["KoenK", "KoenKje", "King of Howest"],
+      "jobTitle": "Lecturer",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Howest",
+        "alternateName": "Hogeschool West-Vlaanderen"
+      },
+      "url": "https://koenkempire.be"
+    }
+    </script>
+    <!-- END SEO -->
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LANGUAGE MODAL -->
+    <div id="lang-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>SELECT LANGUAGE</h2>
+            <div class="lang-options">
+                <button onclick="setLanguage('nl')">🇧🇪 Nederlands</button>
+                <button onclick="setLanguage('en')">🇬🇧 English</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!localStorage.getItem("koenk_lang")) {
+                document.getElementById("lang-modal").style.display = "flex";
+            }
+        });
+        function setLanguage(lang) {
+            localStorage.setItem("koenk_lang", lang);
+            if (lang === "en") {
+                window.location.href = "index_en.html";
+            } else {
+                document.getElementById("lang-modal").style.display = "none";
+            }
+        }
+    </script>
+
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <a href='/' onclick='localStorage.setItem(\'koenk_lang\', \'nl\')' style='font-size: 24px; text-decoration: none; margin-right: 10px;'>🇧🇪</a>
+        <a href='/index_en' onclick='localStorage.setItem(\'koenk_lang\', \'en\')' style='font-size: 24px; text-decoration: none; opacity: 0.5;'>🇬🇧</a>
+    </div>
+
+    <canvas id="webgl-canvas"></canvas>
+
+    <main class="scroll-container">
+        
+        <section class="panel hero-panel">
+            <div class="content-box">
+                <h1 class="glitch" data-text="KING OF HOWEST">KING OF HOWEST</h1>
+                <h2>koen koremans. de mythe. de legende.</h2>
+                <p>scroll naar beneden voor de howest lore</p>
+                <div class="scroll-indicator">⬇</div>
+            </div>
+        </section>
+
+        <section class="panel left-panel">
+            <div class="content-box meme-box">
+                <h2>het ego vs de realiteit</h2>
+                <p>hij legt vooraan in de klas bloedserieus uit dat 1+1=10 en verwacht gwn dat iedereen dat normaal vindt. je mag veel over hem zeggen, maar zijn ego is echt aanzienlijk groter dan hijzelf is. king of howest? eerlijk, hij gelooft het wss zelf echt 💀</p>
+                <p class="small-text">we live in his world fr</p>
+            </div>
+        </section>
+
+        <section class="panel right-panel">
+            <div class="content-box meme-box">
+                <h2>die beruchte 222 IQ hints</h2>
+                <p>je stelt een oprechte vraag en in plaats van gwn antwoord te geven krijg je een soort cryptische riddle terug. de oplossing zit er ergens in, maar je voelt je na die hint gwn dommer dan ervoor. 💀</p>
+            </div>
+        </section>
+
+        <section class="panel left-panel">
+            <div class="content-box meme-box alert-box">
+                <h2>examen trauma</h2>
+                <p>je zit daar 30 minuten lang te panikeren op een examen omdat je de code niet vindt... en hij staat er gwn bij te kijken hoe je afziet. de code stond blijkbaar gwn de hele tijd in het groot op de tv. ik haat alles 😭😭</p>
+                <img src="img/WTF.jpg" alt="Faith in humanity loading" class="meme-img">
+            </div>
+        </section>
+
+        <section class="panel center-panel">
+            <div class="content-box meme-box os-box">
+                <h2>terminal misdaden</h2>
+                <p>als je geen linux gebruikt dan kijkt hij gwn al op je neer (mac users are on thin ice). maar als een collega de les binnenkomt met een setup die er zo uitziet??? da's gwn crimineel 💀</p>
+                <img src="img/well.png" alt="Speechless well" class="meme-img">
+            </div>
+        </section>
+
+        <section class="panel right-panel">
+            <div class="content-box meme-box alert-box">
+                <h2>"meneer... wat is een variabele?"</h2>
+                <p>hij geeft letterlijk al 6 maanden lang OS en programming, en dan durft er nog altijd iemand op de achterste rij de hand opsteken om te vragen 'wat is een variabele'. je ziet m gwn innerlijk sterven 💀</p>
+            </div>
+        </section>
+
+        <section class="panel center-panel">
+            <div class="content-box">
+                <h2>CHOOSE YOUR FIGHTER</h2>
+                <p>tijd om de spanningen op te lossen. kies je game mode:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <a class='flappy-btn' href='/fighter' style='background: var(--danger); color: white;'>
+                        ENTER THE ARENA<br><span style="font-size: 8px;">kies je character en daag koenk uit</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel hero-panel">
+            <div class="content-box">
+                <h2>long live the king</h2>
+                <div style="margin-top: 1rem;">
+                    <p class="small-text" style="color: #888;">"working at howest has been one of the most enriching and rewarding experiences..."</p>
+                    <p class="small-text" style="color: #666;">(gast heeft 100% zeker chatgpt gebruikt voor die tekst idc wat hij zegt 😂)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 40px 20px; font-family: sans-serif; font-size: 12px; color: #666; width: 100%;">
+            <p>Created by <strong>Stef Maes</strong> for the Howest Community.</p>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
