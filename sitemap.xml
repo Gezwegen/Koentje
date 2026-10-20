@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://koenkoreman.site/index.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <loc>https://koenkoreman.site/home.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="nl-be" href="https://koenkoreman.site/index.html"/>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://koenkoreman.site/home.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://koenkoreman.site/index_en.html"/>
   </url>
   <url>
     <loc>https://koenkoreman.site/index_en.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://koenkoreman.site/index.html"/>
@@ -18,13 +18,13 @@
   </url>
   <url>
     <loc>https://koenkoreman.site/fighter.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://koenkoreman.site/fighter_en.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
