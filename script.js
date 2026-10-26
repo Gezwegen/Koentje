@@ -55,8 +55,8 @@ const tuxGroup = new THREE.Group();
 
 const blackMat = new THREE.MeshPhysicalMaterial({ color: 0x111111, roughness: 0.2, clearcoat: 0.6, clearcoatRoughness: 0.2 });
 const whiteMat = new THREE.MeshPhysicalMaterial({ color: 0xeeeeee, roughness: 0.3, clearcoat: 0.4 });
-const yellowMat = new THREE.MeshStandardMaterial({ color: 0xffaa00, roughness: 0.3, metalness: 0.3 });
-const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd700, roughness: 0.1 });
+const yellowMat = new THREE.MeshStandardMaterial({ color: 0xffaa00, roughness: 0.3 });
+const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd700, roughness: 0.1, metalness: 0.3 });
 const redMat = new THREE.MeshStandardMaterial({ color: 0xdd0000, roughness: 0.5 });
 
 const bodyGeo = new THREE.SphereGeometry(1.5, 24, 24);
